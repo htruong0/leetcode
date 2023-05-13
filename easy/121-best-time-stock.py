@@ -3,8 +3,10 @@ class Solution:
         profit = 0
         buyPrice = prices[0]
         for p in prices[1:]:
+            # if price is higher we sell
             if p > buyPrice:
                 profit = max(profit, p - buyPrice)
+            # if price is lower we buy
             else:
                 buyPrice = p
         return profit
